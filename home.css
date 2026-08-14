@@ -1,0 +1,344 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0eef8;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+    padding: 28px 28px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f3eefaef;
+}
+
+
+.sub-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #312f36;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    line-height: 1.55;
+    margin-bottom: 0px;
+    animation: fadeDown 0.5s 0.1s ease both;
+}
+
+.sub-sub-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #312f36;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 0px;
+    line-height: 1.55;
+    margin-bottom: 28px;
+    animation: fadeDown 0.5s 0.1s ease both;
+}
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: relative;
+    background: #ffffff;
+    justify-content: space-between;
+}
+
+header .sininho {
+    font-size: 33px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.a-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: #312f36;
+    text-align: center;
+    font-style: normal !important;
+    text-decoration: none !important;
+    line-height: 1.2;
+    animation: fadeDown 0.5s 0.1s ease both;
+}
+
+.submenu-wrapper {
+    position: relative;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: solid 1px black;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 3px;
+    margin-top: 2px;
+    font-size: 28px;
+    padding: 10px;
+    width: 320px;
+    height: 950px;
+}
+
+.sidebar-header {
+    width: 100%;
+    height: 100px;
+}
+
+.sidebar-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none !important;
+}
+
+.sidebar-item i {
+    width: 25px;
+    text-align: center;
+}
+
+.a-text {
+    text-align: left;
+}
+
+.submenu-mais {
+    position: absolute;
+    bottom: 4.0rem;
+    left: 0;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 12px 20px;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    border-top: 1.5px solid rgba(88, 67, 145, 0.15);
+    border-radius: 8px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.submenu-mais.aberto {
+    display: flex;
+    margin-left: -130px;
+    width: 180px;
+}
+
+.submenu-mais a {
+    text-decoration: none;
+    color: #312f36;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.submenu-mais .arrow {
+    position: absolute;
+    top: 116px;
+    right: 24px;
+    width: 0;
+    height: 0;
+    transform: rotate(180deg);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #f4f4f4;
+    filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.12));
+}
+
+.wrapper-atividades {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.title-atividades {
+    font-size: 16px;
+    font-weight: 700;
+    color: #565361;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 12px;
+    animation: fadeDown 0.5s 0.1s ease both;
+    position: absolute;
+    text-align: left;
+    left: 2px;
+    margin-left: 15px;
+    margin-top: -25px;
+    line-height: 1.55;
+    margin-bottom: 10px;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.cards-container::-webkit-scrollbar {
+    display: none;
+}
+
+.card-atividades {
+    margin-top: 7px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.matematica {
+    border-left: 4px solid #b81c1c;
+}
+
+.filosofia {
+    border-left: 4px solid #6d1cb8;
+}
+
+.geografia {
+    border-left: 4px solid #db7a1f;
+}
+
+.ingles {
+    border-left: 4px solid #1c7bb8;
+}
+
+.card-atividades-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #312f36;
+    text-align: left;
+    line-height: 1.55;
+    margin-bottom: 8px;
+}
+
+
+.card-atividades-data {
+    font-size: 14px;
+    font-weight: 500;
+    color: #565361;
+    text-align: left;
+    line-height: 1.55;
+    margin-top: 8px;
+}
+
+.card-atividades-status {
+    font-size: 14px;
+    font-weight: 500;
+    color: #565361;
+    text-align: left;
+    line-height: 1.55;
+    margin-top: 8px;
+}
+
+
+.resumo-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #565361;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 12px;
+    animation: fadeDown 0.5s 0.1s ease both;
+    text-align: left;
+    left: 2px;
+    margin-left: -10px;
+}
+
+.resumo-section {
+    width: 328px !important;
+}
+
+.resumo-scroll-wrap {
+    width: 340px !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    margin-left: 2px;
+}
+
+.resumo-scroll-wrap::-webkit-scrollbar {
+    display: none;
+}
+
+.resumo-inner {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: max-content;
+}
+
+.resumo-card {
+    flex: 0 0 130px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.resumo-card-num {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.resumo-card-label {
+    font-size: 12px;
+    color: #6b6478;
+    line-height: 1.4;
+}
+
+.verde .resumo-card-num {
+    color: #1D9E75;
+}
+
+.amarelo .resumo-card-num {
+    color: #BA7517;
+}
+
+.azul .resumo-card-num {
+    color: #378ADD;
+}
+
+.vermei .resumo-card-num {
+    color: #E24B4A;
+}
+
+@media (max-width: 420px) {
+    .fundo-pagina {
+        padding: 0;
+        background: #ffffff;
+        align-items: flex-start;
+    }
+
+    .frame-celular {
+        width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+    }
+}
