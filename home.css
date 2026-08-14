@@ -102,7 +102,8 @@ header .sininho {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
+    margin: 18px;
+    gap: 16px;
     text-decoration: none !important;
 }
 
@@ -340,5 +341,470 @@ header .sininho {
         border-radius: 0;
         border: none;
         box-shadow: none;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .content {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+
+    .sidebar {
+        width: min(320px, 100%);
+        height: min(950px, 85vh);
+    }
+
+    .wrapper-atividades {
+        width: 100%;
+    }
+
+    .cards-container {
+        width: 100%;
+        max-height: min(500px, 50vh);
+    }
+
+    .resumo-section {
+        width: min(328px, 100%) !important;
+    }
+
+    .resumo-scroll-wrap {
+        width: min(340px, 100%) !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+
+    .content {
+        width: 100%;
+        padding: 24px 20px 0;
+    }
+
+    .sidebar {
+        width: min(320px, 100%);
+        height: min(800px, 80vh);
+    }
+
+    .wrapper-atividades {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .cards-container {
+        width: 100%;
+        max-height: 50vh;
+    }
+
+    .resumo-section {
+        width: min(328px, 100%) !important;
+    }
+
+    .resumo-scroll-wrap {
+        width: min(340px, 100%) !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .content {
+        width: 100%;
+        min-height: 100vh;
+        padding: 20px 16px 0;
+    }
+
+    header {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    header .sininho {
+        margin: 0;
+        font-size: clamp(26px, 5vw, 33px);
+    }
+
+    .sub-text,
+    .sub-sub-text {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .sub-text {
+        font-size: clamp(17px, 3vw, 20px);
+    }
+
+    .sub-sub-text {
+        font-size: clamp(13px, 2vw, 15px);
+    }
+
+    .sidebar {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        min-height: 0;
+    }
+
+    .sidebar-header {
+        width: 100%;
+        height: auto;
+        min-height: 80px;
+    }
+
+    .sidebar-item {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .a-text {
+        font-size: clamp(13px, 2vw, 15px);
+        overflow-wrap: anywhere;
+    }
+
+    .submenu-mais.aberto {
+        margin-left: 0;
+        width: min(180px, calc(100vw - 32px));
+    }
+
+    .wrapper-atividades {
+        width: 100%;
+        margin-top: 35px;
+    }
+
+    .title-atividades {
+        position: static;
+        width: 100%;
+        margin: 0 0 10px;
+    }
+
+    .cards-container {
+        width: 100%;
+        max-width: 100%;
+        max-height: 55vh;
+    }
+
+    .card-atividades {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .card-atividades-title,
+    .card-atividades-data,
+    .card-atividades-status {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .resumo-section {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    .resumo-title {
+        margin-left: 0;
+    }
+
+    .resumo-scroll-wrap {
+        width: 100% !important;
+        max-width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+
+    body {
+        width: 100%;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    .content {
+        width: 100%;
+        min-height: 100vh;
+        padding: 16px 12px 0;
+    }
+
+    header {
+        width: 100%;
+        min-height: 60px;
+    }
+
+    header .sininho {
+        font-size: 27px;
+        margin: 0;
+    }
+
+    .sub-text {
+        width: 100%;
+        font-size: 17px;
+        margin: 14px 0 0;
+    }
+
+    .sub-sub-text {
+        width: 100%;
+        font-size: 13px;
+        margin: 0 0 20px;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 8px;
+    }
+
+    .sidebar-header {
+        width: 100%;
+        height: auto;
+        min-height: 60px;
+    }
+
+    .sidebar-item {
+        width: 100%;
+        padding: 8px 6px;
+    }
+
+    .sidebar-item i {
+        flex-shrink: 0;
+    }
+
+    .a-text {
+        min-width: 0;
+        font-size: 13px;
+    }
+
+    .submenu-mais {
+        max-width: calc(100vw - 24px);
+    }
+
+    .submenu-mais.aberto {
+        margin-left: 0;
+        width: min(180px, calc(100vw - 24px));
+    }
+
+    .wrapper-atividades {
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .title-atividades {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .cards-container {
+        width: 100%;
+        max-height: 50vh;
+    }
+
+    .card-atividades {
+        width: 100%;
+        padding: 13px;
+    }
+
+    .card-atividades-title,
+    .card-atividades-data,
+    .card-atividades-status {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .resumo-section {
+        width: 100% !important;
+    }
+
+    .resumo-scroll-wrap {
+        width: 100% !important;
+        margin-left: 0;
+    }
+
+    .resumo-inner {
+        width: max-content;
+        min-width: max-content;
+    }
+
+    .resumo-card {
+        flex: 0 0 125px;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .content {
+        padding: 12px 8px 0;
+    }
+
+    .sub-text {
+        font-size: 16px;
+    }
+
+    .sub-sub-text {
+        font-size: 12px;
+    }
+
+    .sidebar {
+        padding: 6px;
+    }
+
+    .sidebar-item {
+        gap: 7px;
+    }
+
+    .a-text {
+        font-size: 12px;
+    }
+
+    .card-atividades {
+        padding: 11px;
+    }
+
+    .resumo-card {
+        flex-basis: 115px;
+        padding: 11px;
+    }
+
+    .resumo-card-num {
+        font-size: 23px;
+    }
+
+    .resumo-card-label {
+        font-size: 10px;
+    }
+}
+
+@media (max-height: 900px) {
+
+    .sidebar {
+        height: min(800px, 98vh);
+        min-height: 400px;
+    }
+
+    .cards-container {
+        max-height: 45vh;
+    }
+
+    .wrapper-atividades {
+        margin-top: 30px;
+    }
+}
+
+@media (max-height: 650px) {
+
+    .content {
+        padding-top: 12px;
+    }
+
+    header {
+        min-height: 55px;
+    }
+
+    .sidebar {
+        height: auto;
+        min-height: 300px;
+    }
+
+    .sidebar-header {
+        min-height: 60px;
+    }
+
+    .wrapper-atividades {
+        margin-top: 15px;
+    }
+
+    .cards-container {
+        max-height: 40vh;
+    }
+
+    .sub-sub-text {
+        margin-bottom: 15px;
+    }
+}
+
+
+@media (max-width: 768px) and (orientation: landscape) {
+
+    .content {
+        min-height: 100vh;
+        padding-top: 12px;
+    }
+
+    .sidebar {
+        height: auto;
+        min-height: 280px;
+    }
+
+    .sidebar-header {
+        min-height: 55px;
+    }
+
+    .wrapper-atividades {
+        margin-top: 15px;
+    }
+
+    .cards-container {
+        max-height: 45vh;
+    }
+
+    .resumo-scroll-wrap {
+        max-height: 30vh;
+    }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+
+    .content {
+        min-height: 100vh;
+    }
+
+    .sidebar {
+        height: auto;
+        min-height: 0;
+    }
+
+    .cards-container {
+        max-height: 50vh;
+    }
+}
+
+@media (min-height: 1000px) and (min-width: 769px) {
+
+    .sidebar {
+        height: min(950px, 85vh);
+    }
+
+    .cards-container {
+        max-height: min(500px, 50vh);
+    }
+}
+
+@media (min-width: 1600px) {
+
+    .content {
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+
+    .wrapper-atividades {
+        max-width: 1100px;
+    }
+
+    .resumo-section {
+        max-width: 1100px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
     }
 }
