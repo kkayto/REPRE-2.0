@@ -1,49 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Repre</title>
-    <link rel="stylesheet" href="home.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-</head>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
 
-<body>
+  <body>
+    <div class="layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-header"></div>
+        <a href__="home.html" class="sidebar-item">
+          <i class="fa-solid fa-house" style="color: #584391"></i>
+          <span class="a-text">Início</span>
+        </a>
+        <a href__="atividades.html" class="sidebar-item">
+          <i class="fa-solid fa-book" style="color: #584391"></i>
+          <span class="a-text">Atividades</span>
+        </a>
+        <a href__="dashboard.html" class="sidebar-item">
+          <i class="fa-solid fa-chart-line" style="color: #584391"></i>
+          <span class="a-text">Desempenho</span>
+        </a>
+        <a href__="#" class="sidebar-item">
+          <i class="fa-solid fa-gear" style="color: #584391"></i>
+          <span class="a-text">Configurações</span>
+        </a>
+        <a href__="calendario.html" class="sidebar-item">
+          <i class="fa-solid fa-calendar" style="color: #584391"></i>
+          <span class="a-text">Calendário</span>
+        </a>
+        <a href__="#" class="sidebar-item">
+          <i class="fa-solid fa-users" style="color: #584391"></i>
+          <span class="a-text">Grêmio e Atlética</span>
+        </a>
+      </aside>
 
-    <div class="sidebar">
-        <div class="sidebar-header">
+      <div class="right-panel">
+        <header>
+          <div class="header-center">
+            <h1>Bem-vindo, [Nome do Usuário]!</h1>
+            <div class="sub-text">
+              Confira as novidades e atividades disponíveis.
+            </div>
+          </div>
+          <div class="header-right">
+            <div class="sininho">
+              <i class="fa-solid fa-bell" style="color: #584391"></i>
+            </div>
+            <div class="profile">
+              <img src="imagem-foto-perfil.jpg" alt="Foto de perfil" />
+            </div>
+          </div>
+        </header>
+
+        <main class="content">
+       <div class="resumo-section">
+        <p class="resumo-title">Resumo Diário</p>
+        <div class="resumo-scroll-wrap" id="resumoScroll">
+            <div class="resumo-inner">
+            <div class="resumo-card verde">
+                <span class="resumo-card-num">10</span>
+                <span class="resumo-card-label">Atividades Concluídas</span>
+            </div>
+              <div class="resumo-card amarelo">
+                <span class="resumo-card-num">10</span>
+                <span class="resumo-card-label">Atividades Concluídas</span>
+            </div>
+              <div class="resumo-card azul">
+                <span class="resumo-card-num">10</span>
+                <span class="resumo-card-label">Atividades Concluídas</span>
+            </div>
+              <div class="resumo-card vermei">
+                <span class="resumo-card-num">10</span>
+                <span class="resumo-card-label">Atividades Concluídas</span>
+            </div>
+            </div>
         </div>
-        <a href="home.html" class="sidebar-item">
-            <i class="fa-solid fa-house" style="color: #584391;"></i>
-            <span class="a-text">Início</span>
-        </a>
-        <a href="atividades.html" class="sidebar-item">
-            <i class="fa-solid fa-book" style="color: #584391;"></i>
-            <span class="a-text">Atividades</span>
-        </a>
-        <a href="dashboard.html" class="sidebar-item">
-            <i class="fa-solid fa-chart-line" style="color: #584391;"></i>
-            <span class="a-text">Desempenho</span>
-        </a>
-        <a href="#" class="sidebar-item"> <i class="fa-solid fa-gear" style="color: #584391;"></i>
-            <span class="a-text"> Configurações</span>
-        </a>
-        <a href="calendario.html" class="sidebar-item"> <i class="fa-solid fa-calendar" style="color: #584391;"></i>
-            <span class="a-text"> Calendário </span>
-        </a>
-        <a href="#" class="sidebar-item"> <i class="fa-solid fa-users" style="color: #584391;"></i>
-            <span class="a-text"> Gremio e Atletica</span>
-        </a>
-    </div>
-    </div>
-    </div>
-
+       </div>
+           
+        </main>
+      </div>
 
     <script src="home.js"></script>
-</body>
-
+  </body>
 </html>

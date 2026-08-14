@@ -6,11 +6,19 @@
     padding: 0;
 }
 
+html,
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f0eef8;
-    min-height: 100vh;
+    width: 100%;
+    min-height: 100%;
 }
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: "Montserrat", sans-serif;
+    color: #312f36;
+}
+
 
 .content {
     flex: 1;
@@ -18,7 +26,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f3eefaef;
 }
 
 
@@ -26,7 +33,6 @@ body {
     font-size: 20px;
     font-weight: 700;
     color: #312f36;
-    text-align: left;
     margin-left: 20px;
     margin-top: 20px;
     line-height: 1.55;
@@ -48,33 +54,72 @@ body {
 
 
 header {
-    display: flex;
     flex-direction: row;
     overflow: hidden;
     position: relative;
     background: #ffffff;
     justify-content: space-between;
+    border-bottom: #1c7bb8 solid 1px;
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.header-center {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    right: 20px;
+    top: 8px;
 }
 
 header .sininho {
     font-size: 33px;
     margin-top: 20px;
-    margin-right: 20px;
+    cursor: pointer;
 }
 
 .a-text {
     font-size: 15px;
     font-weight: 700;
     color: #312f36;
-    text-align: center;
+    text-align: left;
     font-style: normal !important;
     text-decoration: none !important;
     line-height: 1.2;
     animation: fadeDown 0.5s 0.1s ease both;
 }
 
+.profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
 .submenu-wrapper {
     position: relative;
+}
+
+.layout {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
 }
 
 .sidebar {
@@ -83,6 +128,7 @@ header .sininho {
     gap: 4px;
     background: none;
     border: solid 1px black;
+    background-color: #f3eefaef;
     border-radius: 10px;
     cursor: pointer;
     margin-left: 3px;
@@ -90,7 +136,6 @@ header .sininho {
     font-size: 28px;
     padding: 10px;
     width: 320px;
-    height: 950px;
 }
 
 .sidebar-header {
@@ -110,52 +155,6 @@ header .sininho {
 .sidebar-item i {
     width: 25px;
     text-align: center;
-}
-
-.a-text {
-    text-align: left;
-}
-
-.submenu-mais {
-    position: absolute;
-    bottom: 4.0rem;
-    left: 0;
-    background-color: #ffffff;
-    width: 100%;
-    padding: 12px 20px;
-    display: none;
-    flex-direction: column;
-    gap: 12px;
-    border-top: 1.5px solid rgba(88, 67, 145, 0.15);
-    border-radius: 8px;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.submenu-mais.aberto {
-    display: flex;
-    margin-left: -130px;
-    width: 180px;
-}
-
-.submenu-mais a {
-    text-decoration: none;
-    color: #312f36;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.submenu-mais .arrow {
-    position: absolute;
-    top: 116px;
-    right: 24px;
-    width: 0;
-    height: 0;
-    transform: rotate(180deg);
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #f4f4f4;
-    filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.12));
 }
 
 .wrapper-atividades {
@@ -205,6 +204,33 @@ header .sininho {
     background-color: #ffffff;
     border-radius: 8px;
     padding: 16px;
+}
+
+.card {
+    margin-top: 7px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.card h2 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #312f36;
+    text-align: left;
+    line-height: 1.55;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #565361;
+    text-align: left;
+    line-height: 1.55;
 }
 
 .matematica {
@@ -328,35 +354,46 @@ header .sininho {
     color: #E24B4A;
 }
 
-@media (max-width: 420px) {
-    .fundo-pagina {
-        padding: 0;
-        background: #ffffff;
-        align-items: flex-start;
-    }
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
 
-    .frame-celular {
-        width: 100%;
-        min-height: 100vh;
-        border-radius: 0;
-        border: none;
-        box-shadow: none;
-    }
+/* Evita estouro horizontal em qualquer tela */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-@media (min-width: 1200px) {
+/* Elementos nunca podem ultrapassar o pai */
+.content,
+.sidebar,
+.wrapper-atividades,
+.cards-container,
+.card-atividades,
+.resumo-section,
+.resumo-scroll-wrap {
+    max-width: 100%;
+}
+
+/* ============================================================
+   DESKTOP GRANDE
+   1440px+
+   ============================================================ */
+
+@media (min-width: 1440px) {
 
     .content {
         width: 100%;
-        max-width: 1400px;
+        max-width: 1440px;
         margin: 0 auto;
-        padding-left: 28px;
-        padding-right: 28px;
+        padding: 28px;
     }
 
     .sidebar {
-        width: min(320px, 100%);
-        height: min(950px, 85vh);
+        width: 320px;
+        height: min(950px, calc(100vh - 5px));
     }
 
     .wrapper-atividades {
@@ -365,28 +402,45 @@ header .sininho {
 
     .cards-container {
         width: 100%;
-        max-height: min(500px, 50vh);
+        max-height: 500px;
     }
 
     .resumo-section {
-        width: min(328px, 100%) !important;
+        width: 328px !important;
     }
 
     .resumo-scroll-wrap {
-        width: min(340px, 100%) !important;
+        width: 340px !important;
     }
 }
 
-@media (min-width: 769px) and (max-width: 1199px) {
+
+/* ============================================================
+   DESKTOP / NOTEBOOK
+   1024px até 1439px
+   ============================================================ */
+
+@media (min-width: 1024px) and (max-width: 1439px) {
 
     .content {
         width: 100%;
-        padding: 24px 20px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 24px;
     }
 
     .sidebar {
-        width: min(320px, 100%);
-        height: min(800px, 80vh);
+        width: 300px;
+        height: min(850px, calc(100vh - 5px));
+    }
+
+    .sidebar-item {
+        margin: 14px;
+        gap: 12px;
+    }
+
+    .a-text {
+        font-size: 14px;
     }
 
     .wrapper-atividades {
@@ -400,50 +454,43 @@ header .sininho {
     }
 
     .resumo-section {
-        width: min(328px, 100%) !important;
+        width: 100% !important;
+        max-width: 328px;
     }
 
     .resumo-scroll-wrap {
-        width: min(340px, 100%) !important;
+        width: 100% !important;
+        max-width: 340px;
     }
 }
 
-@media (max-width: 768px) {
+
+/* ============================================================
+   TABLET
+   769px até 1023px
+   ============================================================ */
+
+@media (min-width: 769px) and (max-width: 1023px) {
 
     .content {
         width: 100%;
         min-height: 100vh;
-        padding: 20px 16px 0;
+        padding: 22px 20px;
     }
 
     header {
         width: 100%;
-        max-width: 100%;
-    }
-
-    header .sininho {
-        margin: 0;
-        font-size: clamp(26px, 5vw, 33px);
     }
 
     .sub-text,
     .sub-sub-text {
         width: 100%;
         margin-left: 0;
-        margin-right: 0;
-    }
-
-    .sub-text {
-        font-size: clamp(17px, 3vw, 20px);
-    }
-
-    .sub-sub-text {
-        font-size: clamp(13px, 2vw, 15px);
     }
 
     .sidebar {
         width: 100%;
-        max-width: 320px;
+        max-width: 420px;
         height: auto;
         min-height: 0;
     }
@@ -455,18 +502,9 @@ header .sininho {
     }
 
     .sidebar-item {
-        width: 100%;
-        min-width: 0;
-    }
-
-    .a-text {
-        font-size: clamp(13px, 2vw, 15px);
-        overflow-wrap: anywhere;
-    }
-
-    .submenu-mais.aberto {
-        margin-left: 0;
-        width: min(180px, calc(100vw - 32px));
+        width: calc(100% - 20px);
+        margin: 10px;
+        gap: 12px;
     }
 
     .wrapper-atividades {
@@ -477,30 +515,16 @@ header .sininho {
     .title-atividades {
         position: static;
         width: 100%;
-        margin: 0 0 10px;
+        margin: 0 0 12px;
     }
 
     .cards-container {
         width: 100%;
-        max-width: 100%;
-        max-height: 55vh;
-    }
-
-    .card-atividades {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .card-atividades-title,
-    .card-atividades-data,
-    .card-atividades-status {
-        overflow-wrap: anywhere;
-        word-break: break-word;
+        max-height: 50vh;
     }
 
     .resumo-section {
         width: 100% !important;
-        max-width: 100%;
     }
 
     .resumo-title {
@@ -509,52 +533,86 @@ header .sininho {
 
     .resumo-scroll-wrap {
         width: 100% !important;
-        max-width: 100%;
         margin-left: 0;
     }
 }
 
-@media (max-width: 480px) {
+
+/* ============================================================
+   CELULAR
+   até 768px
+   ============================================================ */
+
+@media (max-width: 768px) {
 
     body {
-        width: 100%;
-        min-height: 100vh;
-        overflow-x: hidden;
+        min-height: 100dvh;
     }
 
     .content {
         width: 100%;
-        min-height: 100vh;
-        padding: 16px 12px 0;
+        max-width: 100%;
+        min-height: 100dvh;
+
+        padding: 16px;
+        margin: 0;
+
+        align-items: stretch;
     }
+
+    /* HEADER */
 
     header {
         width: 100%;
+        max-width: 100%;
         min-height: 60px;
     }
 
     header .sininho {
-        font-size: 27px;
-        margin: 0;
+        margin: 12px;
+        font-size: clamp(25px, 7vw, 31px);
+    }
+
+    /* TEXTOS */
+
+    .sub-text,
+    .sub-sub-text {
+        width: 100%;
+        max-width: 100%;
+
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .sub-text {
-        width: 100%;
+        margin-top: 14px;
         font-size: 17px;
-        margin: 14px 0 0;
     }
 
     .sub-sub-text {
-        width: 100%;
+        margin-top: 3px;
+        margin-bottom: 20px;
         font-size: 13px;
-        margin: 0 0 20px;
     }
+
+    .layout {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* SIDEBAR */
 
     .sidebar {
         width: 100%;
+        max-width: 100%;
+
         height: auto;
         min-height: 0;
+
+        margin: 0;
         padding: 8px;
+
+        font-size: 22px;
     }
 
     .sidebar-header {
@@ -565,78 +623,157 @@ header .sininho {
 
     .sidebar-item {
         width: 100%;
-        padding: 8px 6px;
+        min-width: 0;
+
+        margin: 0;
+        padding: 12px 8px;
+
+        gap: 10px;
     }
 
     .sidebar-item i {
-        flex-shrink: 0;
+        flex: 0 0 25px;
     }
 
     .a-text {
+        flex: 1;
         min-width: 0;
+
         font-size: 13px;
+
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    /* SUBMENU */
+
+    .submenu-wrapper {
+        width: 100%;
     }
 
     .submenu-mais {
-        max-width: calc(100vw - 24px);
+        left: 0;
+        bottom: auto;
+        top: 100%;
+
+        width: 100%;
+        max-width: 220px;
+
+        padding: 10px;
+
+        z-index: 100;
     }
 
     .submenu-mais.aberto {
+        width: min(220px, calc(100vw - 32px));
         margin-left: 0;
-        width: min(180px, calc(100vw - 24px));
     }
+
+    /* ATIVIDADES */
 
     .wrapper-atividades {
         width: 100%;
-        margin-top: 25px;
+        max-width: 100%;
+
+        margin-top: 30px;
+
+        align-items: stretch;
     }
 
     .title-atividades {
+        position: static;
+
         width: 100%;
+
+        margin: 0 0 10px;
+
         font-size: 14px;
     }
 
     .cards-container {
         width: 100%;
-        max-height: 50vh;
+        max-width: 100%;
+
+        max-height: none;
+
+        overflow-x: hidden;
+        overflow-y: visible;
     }
 
     .card-atividades {
         width: 100%;
+        max-width: 100%;
+
+        margin-top: 7px;
         padding: 13px;
     }
 
     .card-atividades-title,
     .card-atividades-data,
     .card-atividades-status {
+        width: 100%;
         max-width: 100%;
+
         overflow-wrap: anywhere;
-        word-break: break-word;
     }
+
+    /* RESUMO */
 
     .resumo-section {
         width: 100% !important;
+        max-width: 100%;
+
+        margin-top: 25px;
+    }
+
+    .resumo-title {
+        margin-left: 0;
     }
 
     .resumo-scroll-wrap {
         width: 100% !important;
+        max-width: 100%;
+
         margin-left: 0;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x proximity;
     }
 
     .resumo-inner {
+        display: flex;
+
         width: max-content;
         min-width: max-content;
+
+        gap: 10px;
     }
 
     .resumo-card {
         flex: 0 0 125px;
+
+        scroll-snap-align: start;
     }
 }
 
-@media (max-width: 360px) {
+
+/* ============================================================
+   CELULAR PEQUENO
+   até 480px
+   ============================================================ */
+
+@media (max-width: 480px) {
 
     .content {
-        padding: 12px 8px 0;
+        padding: 12px;
+    }
+
+    header .sininho {
+        margin: 8px;
+        font-size: 26px;
     }
 
     .sub-text {
@@ -652,24 +789,74 @@ header .sininho {
     }
 
     .sidebar-item {
-        gap: 7px;
+        padding: 10px 6px;
+        gap: 8px;
     }
 
     .a-text {
-        font-size: 12px;
+        font-size: 12.5px;
+    }
+
+    .wrapper-atividades {
+        margin-top: 22px;
     }
 
     .card-atividades {
-        padding: 11px;
+        padding: 12px;
+    }
+
+    .card-atividades-title,
+    .card-atividades-data,
+    .card-atividades-status {
+        font-size: 13px;
     }
 
     .resumo-card {
-        flex-basis: 115px;
-        padding: 11px;
+        flex-basis: 120px;
+        padding: 12px;
     }
 
     .resumo-card-num {
-        font-size: 23px;
+        font-size: 24px;
+    }
+}
+
+
+/* ============================================================
+   CELULAR MUITO PEQUENO
+   até 360px
+   ============================================================ */
+
+@media (max-width: 360px) {
+
+    .content {
+        padding: 8px;
+    }
+
+    .sidebar {
+        padding: 5px;
+    }
+
+    .sidebar-item {
+        padding: 9px 5px;
+        gap: 6px;
+    }
+
+    .sidebar-item i {
+        flex-basis: 22px;
+    }
+
+    .a-text {
+        font-size: 11.5px;
+    }
+
+    .resumo-card {
+        flex-basis: 110px;
+        padding: 10px;
+    }
+
+    .resumo-card-num {
+        font-size: 22px;
     }
 
     .resumo-card-label {
@@ -677,126 +864,75 @@ header .sininho {
     }
 }
 
-@media (max-height: 900px) {
 
-    .sidebar {
-        height: min(800px, 98vh);
-        min-height: 400px;
-    }
-
-    .cards-container {
-        max-height: 45vh;
-    }
-
-    .wrapper-atividades {
-        margin-top: 30px;
-    }
-}
-
-@media (max-height: 650px) {
-
-    .content {
-        padding-top: 12px;
-    }
-
-    header {
-        min-height: 55px;
-    }
-
-    .sidebar {
-        height: auto;
-        min-height: 300px;
-    }
-
-    .sidebar-header {
-        min-height: 60px;
-    }
-
-    .wrapper-atividades {
-        margin-top: 15px;
-    }
-
-    .cards-container {
-        max-height: 40vh;
-    }
-
-    .sub-sub-text {
-        margin-bottom: 15px;
-    }
-}
-
+/* ============================================================
+   CELULAR LANDSCAPE
+   ============================================================ */
 
 @media (max-width: 768px) and (orientation: landscape) {
 
     .content {
-        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 10px 16px;
+    }
+
+    .sidebar {
+        height: auto;
+    }
+
+    .sidebar-item {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .wrapper-atividades {
+        margin-top: 18px;
+    }
+
+    .cards-container {
+        max-height: none;
+    }
+}
+
+
+/* ============================================================
+   NOTEBOOK COM ALTURA PEQUENA
+   ============================================================ */
+
+@media (min-width: 769px) and (max-height: 700px) {
+
+    .content {
         padding-top: 12px;
     }
 
     .sidebar {
-        height: auto;
-        min-height: 280px;
+        height: calc(100dvh - 24px);
+        min-height: 0;
+        overflow-y: auto;
     }
 
     .sidebar-header {
-        min-height: 55px;
+        height: 60px;
+    }
+
+    .sidebar-item {
+        margin-top: 8px;
+        margin-bottom: 8px;
     }
 
     .wrapper-atividades {
-        margin-top: 15px;
+        margin-top: 20px;
     }
 
     .cards-container {
-        max-height: 45vh;
-    }
-
-    .resumo-scroll-wrap {
-        max-height: 30vh;
+        max-height: 38vh;
     }
 }
 
-@media (max-width: 768px) and (orientation: portrait) {
 
-    .content {
-        min-height: 100vh;
-    }
-
-    .sidebar {
-        height: auto;
-        min-height: 0;
-    }
-
-    .cards-container {
-        max-height: 50vh;
-    }
-}
-
-@media (min-height: 1000px) and (min-width: 769px) {
-
-    .sidebar {
-        height: min(950px, 85vh);
-    }
-
-    .cards-container {
-        max-height: min(500px, 50vh);
-    }
-}
-
-@media (min-width: 1600px) {
-
-    .content {
-        max-width: 1500px;
-        margin: 0 auto;
-    }
-
-    .wrapper-atividades {
-        max-width: 1100px;
-    }
-
-    .resumo-section {
-        max-width: 1100px;
-    }
-}
+/* ============================================================
+   REDUZIR ANIMAÇÕES
+   ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -805,6 +941,7 @@ header .sininho {
     *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
 }
