@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPRE</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="page">
+        <div class="bg-gradient"></div>
+        <div class="bg-books" id="bgBooks" aria-hidden="true"></div>
+
+        <header>
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                    <path d="M22 10v6" />
+                    <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+                </svg>
+                Repre
+            </div>
+        </header>
+
+        <main>
+            <span class="badge fade">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                </svg>
+                Sua rotina acadêmica em um só lugar
+            </span>
+
+            <h1 class="fade">
+                Estude com <span class="accent">foco</span>, organize-se com <span class="accent">clareza</span>
+            </h1>
+
+            <p class="subtitle fade">
+                Acompanhe atividades, acompanhe seu desempenho e mantenha tudo
+                organizado num espaço pensado para estudantes.
+            </p>
+
+            <div class="actions fade">
+                <a href="/login" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                        <path d="M10 17l5-5-5-5" />
+                        <path d="M15 12H3" />
+                    </svg>
+                    Entrar
+                </a>
+                <a href="/register" class="btn btn-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <line x1="19" y1="8" x2="19" y2="14" />
+                        <line x1="22" y1="11" x2="16" y2="11" />
+                    </svg>
+                    Criar conta
+                </a>
+            </div>
+
+        </main>
+
+        <footer>
+            © 2025 Repre · Estude com organização
+        </footer>
+    </div>
+
+    <script>
+        const FALL_EMOJIS = ["📘", "📗", "📙", "📕", "📓", "📒", "📚", "📖"];
+        const BOOK_COUNT = 22;
+
+        const bg = document.getElementById("bgBooks");
+        for (let i = 0; i < BOOK_COUNT; i++) {
+            const b = document.createElement("div");
+            b.className = "book";
+            b.textContent = FALL_EMOJIS[Math.floor(Math.random() * FALL_EMOJIS.length)];
+            b.style.left = Math.random() * 100 + "vw";
+            b.style.fontSize = 20 + Math.random() * 26 + "px";
+            b.style.animationDuration = 7 + Math.random() * 8 + "s";
+            b.style.animationDelay = -Math.random() * 10 + "s";
+            b.style.opacity = (0.18 + Math.random() * 0.22).toFixed(2);
+            bg.appendChild(b);
+        }
+    </script>
+
+</body>
+
+</html>
