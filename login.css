@@ -71,8 +71,8 @@ body {
     position: relative;
     z-index: 10;
     width: 100%;
-    max-width: 600px;
-    height: 560px;
+    max-width: 690px;
+    height: 590px;
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -80,7 +80,7 @@ body {
     border-radius: 24px;
     padding: 2.5rem 2rem;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-    top: 16vh;
+    top: 12vh;
 }
 
 .card-login-header {
