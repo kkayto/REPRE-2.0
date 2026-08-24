@@ -21,11 +21,10 @@ body {
 
 
 .content {
-    flex: 1;
     padding: 28px 28px 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    grid-area: content;
+    overflow-y: auto;
 }
 
 
@@ -52,36 +51,37 @@ body {
     animation: fadeDown 0.5s 0.1s ease both;
 }
 
-
-header {
-    flex-direction: row;
-    overflow: hidden;
-    position: relative;
-    background: #ffffff;
+.header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    border-bottom: #1c7bb8 solid 1px;
-    align-items: center;
-    text-align: center;
-    padding: 10px 20px;
+    padding: 0 30px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.header-center {
+.header-nav {
     display: flex;
-    flex-direction: column;
+    gap: 25px;
 }
 
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    position: absolute;
-    right: 20px;
-    top: 8px;
+.header-nav a {
+    color: #4b5563;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
-header .sininho {
+.header-nav a:hover {
+    color: #2563eb;
+}
+
+.header .sininho {
     font-size: 33px;
-    margin-top: 20px;
+    margin-top: 10px;
     cursor: pointer;
 }
 
@@ -101,7 +101,7 @@ header .sininho {
     height: 40px;
     border-radius: 50%;
     overflow: hidden;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-right: 20px;
 }
 
@@ -110,32 +110,29 @@ header .sininho {
 }
 
 .layout {
-    display: flex;
-    flex-direction: row;
     min-height: 100vh;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 70px 1fr 60px;
+
+    grid-template-areas:
+        "header header"
+        "sidebar content"
+        "sidebar footer";
 }
 
-.right-panel {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-width: 0;
-}
 
 .sidebar {
+    grid-area: sidebar;
     display: flex;
     flex-direction: column;
     gap: 4px;
     background: none;
-    border: solid 1px black;
     background-color: #f3eefaef;
-    border-radius: 10px;
+    border-radius: 7px;
     cursor: pointer;
-    margin-left: 3px;
-    margin-top: 2px;
     font-size: 28px;
     padding: 10px;
-    width: 320px;
 }
 
 .sidebar-header {
@@ -354,594 +351,18 @@ header .sininho {
     color: #E24B4A;
 }
 
-/* ============================================================
-   RESPONSIVIDADE
-   ============================================================ */
 
-/* Evita estouro horizontal em qualquer tela */
-html,
-body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+.footer {
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    padding: 0 20px;
 }
 
-/* Elementos nunca podem ultrapassar o pai */
-.content,
-.sidebar,
-.wrapper-atividades,
-.cards-container,
-.card-atividades,
-.resumo-section,
-.resumo-scroll-wrap {
-    max-width: 100%;
-}
-
-/* ============================================================
-   DESKTOP GRANDE
-   1440px+
-   ============================================================ */
-
-@media (min-width: 1440px) {
-
-    .content {
-        width: 100%;
-        max-width: 1440px;
-        margin: 0 auto;
-        padding: 28px;
-    }
-
-    .sidebar {
-        width: 320px;
-        height: min(950px, calc(100vh - 5px));
-    }
-
-    .wrapper-atividades {
-        width: 100%;
-    }
-
-    .cards-container {
-        width: 100%;
-        max-height: 500px;
-    }
-
-    .resumo-section {
-        width: 328px !important;
-    }
-
-    .resumo-scroll-wrap {
-        width: 340px !important;
-    }
-}
-
-
-/* ============================================================
-   DESKTOP / NOTEBOOK
-   1024px até 1439px
-   ============================================================ */
-
-@media (min-width: 1024px) and (max-width: 1439px) {
-
-    .content {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 24px;
-    }
-
-    .sidebar {
-        width: 300px;
-        height: min(850px, calc(100vh - 5px));
-    }
-
-    .sidebar-item {
-        margin: 14px;
-        gap: 12px;
-    }
-
-    .a-text {
-        font-size: 14px;
-    }
-
-    .wrapper-atividades {
-        width: 100%;
-        margin-top: 40px;
-    }
-
-    .cards-container {
-        width: 100%;
-        max-height: 50vh;
-    }
-
-    .resumo-section {
-        width: 100% !important;
-        max-width: 328px;
-    }
-
-    .resumo-scroll-wrap {
-        width: 100% !important;
-        max-width: 340px;
-    }
-}
-
-
-/* ============================================================
-   TABLET
-   769px até 1023px
-   ============================================================ */
-
-@media (min-width: 769px) and (max-width: 1023px) {
-
-    .content {
-        width: 100%;
-        min-height: 100vh;
-        padding: 22px 20px;
-    }
-
-    header {
-        width: 100%;
-    }
-
-    .sub-text,
-    .sub-sub-text {
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .sidebar {
-        width: 100%;
-        max-width: 420px;
-        height: auto;
-        min-height: 0;
-    }
-
-    .sidebar-header {
-        width: 100%;
-        height: auto;
-        min-height: 80px;
-    }
-
-    .sidebar-item {
-        width: calc(100% - 20px);
-        margin: 10px;
-        gap: 12px;
-    }
-
-    .wrapper-atividades {
-        width: 100%;
-        margin-top: 35px;
-    }
-
-    .title-atividades {
-        position: static;
-        width: 100%;
-        margin: 0 0 12px;
-    }
-
-    .cards-container {
-        width: 100%;
-        max-height: 50vh;
-    }
-
-    .resumo-section {
-        width: 100% !important;
-    }
-
-    .resumo-title {
-        margin-left: 0;
-    }
-
-    .resumo-scroll-wrap {
-        width: 100% !important;
-        margin-left: 0;
-    }
-}
-
-
-/* ============================================================
-   CELULAR
-   até 768px
-   ============================================================ */
-
-@media (max-width: 768px) {
-
-    body {
-        min-height: 100dvh;
-    }
-
-    .content {
-        width: 100%;
-        max-width: 100%;
-        min-height: 100dvh;
-
-        padding: 16px;
-        margin: 0;
-
-        align-items: stretch;
-    }
-
-    /* HEADER */
-
-    header {
-        width: 100%;
-        max-width: 100%;
-        min-height: 60px;
-    }
-
-    header .sininho {
-        margin: 12px;
-        font-size: clamp(25px, 7vw, 31px);
-    }
-
-    /* TEXTOS */
-
-    .sub-text,
-    .sub-sub-text {
-        width: 100%;
-        max-width: 100%;
-
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .sub-text {
-        margin-top: 14px;
-        font-size: 17px;
-    }
-
-    .sub-sub-text {
-        margin-top: 3px;
-        margin-bottom: 20px;
-        font-size: 13px;
-    }
-
-    .layout {
-        flex-direction: column;
-        gap: 0;
-    }
-
-    /* SIDEBAR */
-
-    .sidebar {
-        width: 100%;
-        max-width: 100%;
-
-        height: auto;
-        min-height: 0;
-
-        margin: 0;
-        padding: 8px;
-
-        font-size: 22px;
-    }
-
-    .sidebar-header {
-        width: 100%;
-        height: auto;
-        min-height: 60px;
-    }
-
-    .sidebar-item {
-        width: 100%;
-        min-width: 0;
-
-        margin: 0;
-        padding: 12px 8px;
-
-        gap: 10px;
-    }
-
-    .sidebar-item i {
-        flex: 0 0 25px;
-    }
-
-    .a-text {
-        flex: 1;
-        min-width: 0;
-
-        font-size: 13px;
-
-        overflow-wrap: anywhere;
-        word-break: normal;
-    }
-
-    /* SUBMENU */
-
-    .submenu-wrapper {
-        width: 100%;
-    }
-
-    .submenu-mais {
-        left: 0;
-        bottom: auto;
-        top: 100%;
-
-        width: 100%;
-        max-width: 220px;
-
-        padding: 10px;
-
-        z-index: 100;
-    }
-
-    .submenu-mais.aberto {
-        width: min(220px, calc(100vw - 32px));
-        margin-left: 0;
-    }
-
-    /* ATIVIDADES */
-
-    .wrapper-atividades {
-        width: 100%;
-        max-width: 100%;
-
-        margin-top: 30px;
-
-        align-items: stretch;
-    }
-
-    .title-atividades {
-        position: static;
-
-        width: 100%;
-
-        margin: 0 0 10px;
-
-        font-size: 14px;
-    }
-
-    .cards-container {
-        width: 100%;
-        max-width: 100%;
-
-        max-height: none;
-
-        overflow-x: hidden;
-        overflow-y: visible;
-    }
-
-    .card-atividades {
-        width: 100%;
-        max-width: 100%;
-
-        margin-top: 7px;
-        padding: 13px;
-    }
-
-    .card-atividades-title,
-    .card-atividades-data,
-    .card-atividades-status {
-        width: 100%;
-        max-width: 100%;
-
-        overflow-wrap: anywhere;
-    }
-
-    /* RESUMO */
-
-    .resumo-section {
-        width: 100% !important;
-        max-width: 100%;
-
-        margin-top: 25px;
-    }
-
-    .resumo-title {
-        margin-left: 0;
-    }
-
-    .resumo-scroll-wrap {
-        width: 100% !important;
-        max-width: 100%;
-
-        margin-left: 0;
-
-        overflow-x: auto;
-        overflow-y: hidden;
-
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x proximity;
-    }
-
-    .resumo-inner {
-        display: flex;
-
-        width: max-content;
-        min-width: max-content;
-
-        gap: 10px;
-    }
-
-    .resumo-card {
-        flex: 0 0 125px;
-
-        scroll-snap-align: start;
-    }
-}
-
-
-/* ============================================================
-   CELULAR PEQUENO
-   até 480px
-   ============================================================ */
-
-@media (max-width: 480px) {
-
-    .content {
-        padding: 12px;
-    }
-
-    header .sininho {
-        margin: 8px;
-        font-size: 26px;
-    }
-
-    .sub-text {
-        font-size: 16px;
-    }
-
-    .sub-sub-text {
-        font-size: 12px;
-    }
-
-    .sidebar {
-        padding: 6px;
-    }
-
-    .sidebar-item {
-        padding: 10px 6px;
-        gap: 8px;
-    }
-
-    .a-text {
-        font-size: 12.5px;
-    }
-
-    .wrapper-atividades {
-        margin-top: 22px;
-    }
-
-    .card-atividades {
-        padding: 12px;
-    }
-
-    .card-atividades-title,
-    .card-atividades-data,
-    .card-atividades-status {
-        font-size: 13px;
-    }
-
-    .resumo-card {
-        flex-basis: 120px;
-        padding: 12px;
-    }
-
-    .resumo-card-num {
-        font-size: 24px;
-    }
-}
-
-
-/* ============================================================
-   CELULAR MUITO PEQUENO
-   até 360px
-   ============================================================ */
-
-@media (max-width: 360px) {
-
-    .content {
-        padding: 8px;
-    }
-
-    .sidebar {
-        padding: 5px;
-    }
-
-    .sidebar-item {
-        padding: 9px 5px;
-        gap: 6px;
-    }
-
-    .sidebar-item i {
-        flex-basis: 22px;
-    }
-
-    .a-text {
-        font-size: 11.5px;
-    }
-
-    .resumo-card {
-        flex-basis: 110px;
-        padding: 10px;
-    }
-
-    .resumo-card-num {
-        font-size: 22px;
-    }
-
-    .resumo-card-label {
-        font-size: 10px;
-    }
-}
-
-
-/* ============================================================
-   CELULAR LANDSCAPE
-   ============================================================ */
-
-@media (max-width: 768px) and (orientation: landscape) {
-
-    .content {
-        min-height: 100dvh;
-        padding: 10px 16px;
-    }
-
-    .sidebar {
-        height: auto;
-    }
-
-    .sidebar-item {
-        padding-top: 8px;
-        padding-bottom: 8px;
-    }
-
-    .wrapper-atividades {
-        margin-top: 18px;
-    }
-
-    .cards-container {
-        max-height: none;
-    }
-}
-
-
-/* ============================================================
-   NOTEBOOK COM ALTURA PEQUENA
-   ============================================================ */
-
-@media (min-width: 769px) and (max-height: 700px) {
-
-    .content {
-        padding-top: 12px;
-    }
-
-    .sidebar {
-        height: calc(100dvh - 24px);
-        min-height: 0;
-        overflow-y: auto;
-    }
-
-    .sidebar-header {
-        height: 60px;
-    }
-
-    .sidebar-item {
-        margin-top: 8px;
-        margin-bottom: 8px;
-    }
-
-    .wrapper-atividades {
-        margin-top: 20px;
-    }
-
-    .cards-container {
-        max-height: 38vh;
-    }
-}
-
-
-/* ============================================================
-   REDUZIR ANIMAÇÕES
-   ============================================================ */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
+.footer p {
+    font-size: 13px;
+    color: #6b7280;
 }

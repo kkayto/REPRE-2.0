@@ -9,7 +9,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f0eef8;
-    min-height: 100vh;
 }
 
 .bg-books {
@@ -54,18 +53,7 @@ body {
     animation: fade-down 0.6s ease both;
 }
 
-/*@media (prefers-reduced-motion: reduce) {
-    .book {
-        animation: none;
-        display: none;
-    }
 
-    .fade {
-        animation: none;
-        opacity: 1;
-    }
-}
-*/
 header {
     position: relative;
     z-index: 10;
